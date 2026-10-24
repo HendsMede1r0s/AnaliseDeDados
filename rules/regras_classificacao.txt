@@ -1,0 +1,64 @@
+=========================================================
+BASE DE CONHECIMENTO: CLASSIFICAÇÃO DE DESEMPENHO ACADÊMICO
+=========================================================
+
+REGRA R1
+TIPO: Relação
+SE o 'prior_gpa' <= 3
+ENTÃO classificar como Classe 0 (Baixo Desempenho)
+JUSTIFICATIVA: Alunos com histórico de notas baixas (<= 3) tendem a manter baixo desempenho.
+
+REGRA R2
+TIPO: Relação
+SE o 'sleep_midpoint_minutes' > 540
+ENTÃO classificar como Classe 0 (Baixo Desempenho)
+JUSTIFICATIVA: Alunos que dormem ou acordam muito tarde (ponto médio > 9h) apresentam correlação com baixo GPA.
+
+REGRA R3
+TIPO: Heurística
+SE a 'avg_sleep_hours' estiver entre 6.5 e 7.5
+E o 'first_generation' == 1
+ENTÃO classificar como Classe 0 (Baixo Desempenho)
+JUSTIFICATIVA: Alunos de primeira geração, mesmo dormindo horas adequadas, enfrentam desafios estruturais que afetam o GPA.
+
+REGRA R4
+TIPO: Heurística
+SE o 'underrepresented' == 1
+E o 'sleep_midpoint_minutes' > 520
+ENTÃO classificar como Classe 0 (Baixo Desempenho)
+JUSTIFICATIVA: Alunos de grupos minoritários somados a hábitos de sono irregulares tendem a ter maior dificuldade acadêmica.
+
+REGRA R5A
+TIPO: Diretriz
+SE o 'sleep_midpoint_minutes' <= 300
+E o 'first_generation' == 1
+ENTÃO classificar como Classe 0 (Baixo Desempenho)
+JUSTIFICATIVA: Extremas privações ou horários muito precoces prejudicam o foco, independentemente de ser primeira geração.
+
+REGRA R5B
+TIPO: Diretriz
+SE o 'sleep_midpoint_minutes' estiver entre 310 e 340
+E o 'first_generation' == 1
+ENTÃO classificar como Classe 0 (Baixo Desempenho)
+JUSTIFICATIVA: Padrões de sono curtos ou fora do ciclo normal combinados com a pressão da primeira geração resultam em queda de notas.
+
+REGRA R6
+TIPO: Recomendação
+SE o 'prior_gpa' > 3.80
+E o 'sleep_midpoint_minutes' <= 531.80
+ENTÃO classificar como Classe 1 (Alto Desempenho)
+JUSTIFICATIVA: Excelência prévia aliada a um horário de sono controlado é a receita para identificar alunos de alto nível.
+
+REGRA R7
+TIPO: Relação
+SE o 'prior_gpa' > 3.16
+E a 'avg_sleep_hours' >= 5.97
+ENTÃO classificar como Classe 0 (Baixo Desempenho)
+JUSTIFICATIVA: Embora tenham notas medianas, o limiar de sono não é suficiente para a manutenção no topo da curva.
+
+REGRA R8
+TIPO: Relação
+SE o 'prior_gpa' <= 3.66
+E a 'avg_sleep_hours' > 4.51
+ENTÃO classificar como Classe 0 (Baixo Desempenho)
+JUSTIFICATIVA: Alunos com GPA abaixo do percentil superior continuam com baixo desempenho mesmo dormindo um pouco mais de 4.5h.
