@@ -14,13 +14,14 @@ Este projeto realiza a comparação entre um Sistema Especialista (baseado em re
 ├── data/
 │   ├── raw/college_sleep_and_gpa.csv
 │   └── processed/
-│       ├── dataset_clean.csv
+│       ├── data_limpo_class.csv
 │       ├── dataset_regression.csv
 │       └── dataset_classification.csv
-│       ├── X_train_clf.csv
-│       ├── X_test_clf.csv
-│       ├── y_train_clf.csv
-│       └── y_test_clf.csv
+|       └──dataset_clean_encoded.csv
+│       ├── X_train_class.csv
+│       ├── X_test_class.csv
+│       ├── y_train_class.csv
+│       └── y_test_class.csv
 ├── notebooks/
 │   ├── 01_eda.ipynb 
 │   ├── 02_preprocessing.ipynb 
@@ -36,7 +37,6 @@ Este projeto realiza a comparação entre um Sistema Especialista (baseado em re
 │   └── cronometro_regras.csv 
 ├── reports/
 │   ├── figures/ 
-│   └── tables/ 
 ├── src/
 ├── requirements.txt
 └── README.md

@@ -29,18 +29,15 @@ ENTÃO classificar como Classe 0 (Baixo Desempenho)
 JUSTIFICATIVA: Alunos de grupos minoritários somados a hábitos de sono irregulares tendem a ter maior dificuldade acadêmica.
 
 REGRA R5A
-TIPO: Diretriz
 SE o 'sleep_midpoint_minutes' <= 300
 E o 'first_generation' == 1
 ENTÃO classificar como Classe 0 (Baixo Desempenho)
-JUSTIFICATIVA: Extremas privações ou horários muito precoces prejudicam o foco, independentemente de ser primeira geração.
 
 REGRA R5B
-TIPO: Diretriz
-SE o 'sleep_midpoint_minutes' estiver entre 310 e 340
+SE o 'sleep_midpoint_minutes' >= 310
+E o 'sleep_midpoint_minutes' <= 340
 E o 'first_generation' == 1
 ENTÃO classificar como Classe 0 (Baixo Desempenho)
-JUSTIFICATIVA: Padrões de sono curtos ou fora do ciclo normal combinados com a pressão da primeira geração resultam em queda de notas.
 
 REGRA R6
 TIPO: Recomendação

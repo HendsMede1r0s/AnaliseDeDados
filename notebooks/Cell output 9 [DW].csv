@@ -1,5 +1,0 @@
-Modelo,Tempo Treino / Elaboração,Inf. Total (Média ± Std),Inf. por Amostra (ms),Vazão (amostras/s),Pico Memória (MB),Complexidade,Energia (kWh),CO2 (mg)
-Sistema Especialista,2h (Humano),0.00757s ± 0.00020s,0.0601,16645.0,0.01,8 regras,3.15e-08,0.0014
-Árvore de Decisão,0.00235s (Comp.),0.00111s ± 0.00009s,0.0088,113242.0,0.0111,Prof: 2 | Folhas: 4,4.64e-09,0.0002
-Random Forest,0.08236s (Comp.),0.02917s ± 0.00166s,0.2315,4320.0,0.2382,75 árvores,1.22e-07,0.0056
-Gradient Boosting,0.25951s (Comp.),0.00212s ± 0.00019s,0.0168,59453.0,0.0136,200 árvores,8.83e-09,0.0004
